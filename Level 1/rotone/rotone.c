@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ulstr.c                                            :+:      :+:    :+:   */
+/*   rotone.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pealexan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 14:21:56 by pealexan          #+#    #+#             */
-/*   Updated: 2023/01/11 14:27:59 by pealexan         ###   ########.fr       */
+/*   Created: 2023/01/11 13:51:02 by pealexan          #+#    #+#             */
+/*   Updated: 2023/01/11 13:57:00 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ int	main(int argc, char **argv)
 
 	if (argc == 2)
 	{
-		while (argv[1][i])
+		while(argv[1][i])
 		{
-			if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
+			if ((argv[1][i] >= 'a' && argv[1][i] <= 'y') || (argv[1][i] >= 'A' && argv[1][i] <= 'Y'))
 			{
-				a = argv[1][i] - 32;
+				a = argv[1][i] + 1;
 				write(1, &a, 1);
 			}
-			else if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
+			else if (argv[1][i] == 'z' || argv[1][i] == 'Z')
 			{
-				a = argv[1][i] + 32;
+				a = argv[1][i] - 25;
 				write(1, &a, 1);
 			}
-			else
+			else 
 				write(1, &argv[1][i], 1);
 			i++;
 		}
